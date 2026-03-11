@@ -29,7 +29,7 @@ Description of the project's primary documents
 + Step 3: Once ready, run the code using `python train.py`.
 ## Requirements
 Please refer to the requirements.txt. The specific installation method is as follows: `pip install -r requirements.txt`.
-## Meghodology
+## Methodology
 Please refer to the manuscript.
 ## Additional Information
 If you have any other questions, please feel free to contact us!
