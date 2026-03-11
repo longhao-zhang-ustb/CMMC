@@ -134,23 +134,3 @@ class BatchWrapper(object):
 
     def __len__(self):
         return len(self.dl)
-
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--data_dir', default='./data/', help="Directory containing the dataset")
-    parser.add_argument('--embedding_pkl_path', default='./data/word_embedding', help="Path to word vecfile.")
-    parser.add_argument('--model_dir', default='experiments/base_model', help="Directory containing params.json")
-    parser.add_argument('--bert', default=False, help=" use Bert or wordembedding")
-
-    params = type('classA', (object,), dict(batch_size=32, fix_length=96))()
-
-    args = parser.parse_args()
-    dataset = Dataset(args=args, params=params)
-
-    val_data = BatchWrapper(dataset.get_data('validation'), gpu=True)
-    batch = next(iter(val_data))
-    print(batch)
-    # print('batch:\n', batch)
-    # print('batch_text:\n', batch.text)
-    # print('batch_label:\n', batch.label)
